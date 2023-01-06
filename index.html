@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <form method="POST" action="">
+      <div class="dispFlex">
+        <div>
+          <input type="checkbox" class="dispInBlo" name="OnMeet" value="1" />
+          <span>来場</span>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            id="checkbox-web"
+            class="dispInBlo"
+            name="web"
+            value="2"
+            onchange="Check(this)"
+          />
+          <span>web</span>
+          <span id="verdict"> </span>
+        </div>
+        <div>
+          <input type="checkbox" class="dispInBlo" name="telephone" value="3" />
+          <span>電話</span>
+        </div>
+      </div>
+    </form>
+  </body>
+
+  <script>
+    function Check(value) {
+      const isCheckboxWeb = document.getElementById("checkbox-web");
+      console.log(isCheckboxWeb.checked);
+      if (isCheckboxWeb.checked) {
+        document.getElementById("verdict").innerHTML =
+          '(<input type="radio" name="web_tool" value="2_1">Zoom&nbsp;<input type="radio" name="web_tool" value="2_2">Google Meet)';
+      } else {
+        document.getElementById("verdict").innerHTML = "";
+      }
+    }
+  </script>
+</html>
